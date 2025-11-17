@@ -27,5 +27,4 @@ A simplified Go implementation of **YT-DLP** that downloads YouTube videos and p
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/mini-yt-dlp-go.git
-cd mini-yt-dlp-go
+git clone https://github.com/Facelless/yt-download-playlist
