@@ -15,7 +15,7 @@ const (
 )
 
 func DownloadVideo(url string) error {
-	fmt.Println("[DOWNLOAD] Verificando playlist/video:", url)
+	fmt.Println("[DOWNLOAD] Checking playlist/video: ", url)
 
 	outputDir := "./downloads/"
 	if err := os.MkdirAll(outputDir, os.ModePerm); err != nil {
