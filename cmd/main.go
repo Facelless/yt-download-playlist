@@ -22,7 +22,7 @@ func main() {
 	for _, v := range videos {
 		err := internal.DownloadVideo(v)
 		if err != nil {
-			log.Println("Erro ao baixar:", v, err)
+			log.Println("Error when downloading: ", v, err)
 		}
 	}
 }
