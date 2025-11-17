@@ -11,18 +11,18 @@ func main() {
 
 	videos, err := internal.ExtractPlaylistVideos(playlistURL)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Failed to extract videos from playlist:", err)
 	}
 
-	fmt.Println("Vídeos encontrados:", len(videos))
+	fmt.Println("[INFO] Videos found:", len(videos))
 	for _, v := range videos {
-		fmt.Println("Vídeo:", v)
+		fmt.Println("[INFO] Video URL:", v)
 	}
 
 	for _, v := range videos {
 		err := internal.DownloadVideo(v)
 		if err != nil {
-			log.Println("Error when downloading: ", v, err)
+			log.Println("[ERROR] Failed to download video:", v, "-", err)
 		}
 	}
 }
