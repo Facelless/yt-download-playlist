@@ -1,3 +1,4 @@
+![Uploading](https://i.postimg.cc/3JSQ41mD/image.png)
 # 🎬 Mini YT-DLP in Go
 
 A simplified Go implementation of **YT-DLP** that downloads YouTube videos and playlists and automatically converts them to **MP3 audio**, with clean and user-friendly logs.
