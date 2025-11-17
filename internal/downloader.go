@@ -15,13 +15,13 @@ const (
 )
 
 func DownloadVideo(url string) error {
-	fmt.Println("[DOWNLOAD] Checking playlist/video: ", url)
+	fmt.Println("[DOWNLOAD] Checking playlist/video:", url)
 
 	outputDir := "./downloads/"
 	if err := os.MkdirAll(outputDir, os.ModePerm); err != nil {
 		return err
 	}
-	fmt.Println("[DOWNLOAD] Criando pasta downloads em", outputDir)
+	fmt.Println("[DOWNLOAD] Creating downloads folder at", outputDir)
 
 	cmd := exec.Command(
 		"yt-dlp",
@@ -54,12 +54,11 @@ func DownloadVideo(url string) error {
 		return err
 	}
 
-	fmt.Println(Green + "[DOWNLOAD] Concluído: " + url + Reset)
+	fmt.Println(Green + "[DOWNLOAD] Completed:", url + Reset)
 	return nil
 }
 
 func containsDownloadInfo(line string) bool {
-	// Ex.: mensagens de download ou conversão
 	keywords := []string{"[download]", "[ExtractAudio]", "[ffmpeg]"}
 	for _, k := range keywords {
 		if contains(line, k) {
@@ -68,6 +67,7 @@ func containsDownloadInfo(line string) bool {
 	}
 	return false
 }
+
 func contains(s, substr string) bool {
 	return len(s) >= len(substr) && (s == substr || (len(s) > len(substr) && (s[0:len(substr)] == substr || contains(s[1:], substr))))
 }
